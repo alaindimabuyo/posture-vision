@@ -1,0 +1,37 @@
+/* components/Navbar/Navbar.module.css */
+
+.navbar {
+  position: fixed; /* Make the navbar fixed */
+  top: 0; /* Stick it to the top */
+  left: 0;
+  width: 100%; /* Take the full width of the viewport */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 5rem;
+  background-color: white;
+  color: white;
+  z-index: 1000; /* Ensure it stays above other content */
+}
+
+.logo a {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+}
+
+.navLinks {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.navLinks a {
+  color: black;
+  text-decoration: none;
+}
+
+.navLinks a:hover {
+  text-decoration: underline;
+}
