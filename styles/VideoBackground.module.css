@@ -24,10 +24,19 @@
   position: relative;
   width: 100%;
   height: 100vh;
-  background-image: url('../assets/light-brown.jpg'); /* Add your image path here */
+  /* background-image: url('../assets/light-brown.jpg'); Add your image path here */
+  background-color: #e8e4c9;
   background-size: cover;
   background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.fadeIn {
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+}
+
+.fadeIn.fadeInActive {
+  opacity: 1;
 }
