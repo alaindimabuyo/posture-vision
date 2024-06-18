@@ -12,33 +12,33 @@ export default function Services() {
       <div className="container mx-auto border border-white p-[9rem] rounded-br-[100px] rounded-tl-[100px] flex">
         <div className="w-1/2">
           <div className={styles.textServices}>
-            <h2 className="text-4xl font-bold mb-1">
+            <h2 className="text-4xl font-bold mb-1 text-black">
               Dr. Brian Hutcheson, D.C.
             </h2>
-            <h1 className="text-xl font-normal mb-8 w-[600px]">
+            <h1 className="text-xl font-normal mb-8 w-[600px] text-black">
               With an instinct for innovation, Dr. Hutcheson continues to shed
               light on the modern human condition through his work. He is
               working on innovative solutions to take action against the side
               effect of our forward head, face down lifestyles.
             </h1>
-            <h1 className="text-[1rem] font-normal mb-8 w-[600px]">
+            <h1 className="text-[1rem] font-normal mb-8 w-[600px] text-black">
               Dr. Brian Hutcheson’s Three Health Tips For Higher Productivity
             </h1>
-            <h2 className="text-[1.5rem] font-normal mb-1">
+            <h2 className="text-[1.5rem] font-normal mb-1 text-black">
               <FontAwesomeIcon
                 icon={faCheck}
                 className="text-green-500"
               />{' '}
               Drink More Water
             </h2>
-            <h2 className="text-[1.5rem] font-normal mb-1">
+            <h2 className="text-[1.5rem] font-normal mb-1 text-black">
               <FontAwesomeIcon
                 icon={faCheck}
                 className="text-green-500"
               />{' '}
               Maintain Good Posture
             </h2>
-            <h2 className="text-[1.5rem] font-normal mb-1">
+            <h2 className="text-[1.5rem] font-normal mb-1 text-black">
               <FontAwesomeIcon
                 icon={faCheck}
                 className="text-green-500"

@@ -5,6 +5,8 @@ import {
   faTwitter,
   faInstagram,
   faLinkedin,
+  faGoogle,
+  faYoutube,
 } from '@fortawesome/free-brands-svg-icons';
 
 const Footer = () => {
@@ -15,7 +17,7 @@ const Footer = () => {
           <h3 className="text-lg font-semibold">Follow Us</h3>
           <div className="flex justify-center md:justify-start space-x-12 mt-2">
             <a
-              href="#"
+              href="https://www.facebook.com/brian.hutcheson"
               aria-label="Facebook"
               className="hover:text-blue-500">
               <FontAwesomeIcon
@@ -24,16 +26,25 @@ const Footer = () => {
               />
             </a>
             <a
-              href="#"
+              href="https://www.google.com/maps/place/Dr.+Brian+Hutcheson/@26.5234069,-81.8876877,17z/data=!3m1!4b1!4m6!3m5!1s0x8855671207155555:0x1d5716b3bb0a6562!8m2!3d26.5234069!4d-81.8876877!16s%2Fg%2F11qgb7lcx1?entry=ttu"
               aria-label="Twitter"
               className="hover:text-blue-400">
               <FontAwesomeIcon
-                icon={faTwitter}
+                icon={faGoogle}
                 size="2xl"
               />
             </a>
             <a
-              href="#"
+              href="https://www.youtube.com/channel/UCN9vfmxhsfONgBI7f0YIVeQ/featured"
+              aria-label="Twitter"
+              className="hover:text-blue-400">
+              <FontAwesomeIcon
+                icon={faYoutube}
+                size="2xl"
+              />
+            </a>
+            <a
+              href="https://www.instagram.com/brian_hutcheson/"
               aria-label="Instagram"
               className="hover:text-pink-600">
               <FontAwesomeIcon
@@ -42,7 +53,7 @@ const Footer = () => {
               />
             </a>
             <a
-              href="#"
+              href="https://www.linkedin.com/in/brian-hutcheson-38a25a83/"
               aria-label="LinkedIn"
               className="hover:text-blue-700">
               <FontAwesomeIcon

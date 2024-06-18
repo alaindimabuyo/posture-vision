@@ -1,26 +1,21 @@
 import { useState, useEffect } from 'react';
-import Image from 'next/image';
 import styles from '../../styles/VideoBackground.module.css';
-import billgates from '../../assets/billgates.jpg';
 
 const testimonials = [
   {
-    name: 'John Doe',
-    role: 'CEO, Company A',
-    image: billgates,
-    text: 'This service is fantastic! Highly recommend to anyone in need of quality work.',
+    name: 'Immy Tariq',
+    role: 'Disrupt Magazine',
+    text: '"Dr. Hutcheson is making a considerable impact on the healthcare industry, and many conventional health professionals may soon take notice of the productivity he helps his clients attain."',
   },
   {
-    name: 'Jane Smith',
-    role: 'CTO, Company B',
-    image: billgates,
-    text: 'Absolutely brilliant! The team was professional and delivered great results.',
+    name: 'Natalie Roberts',
+    role: 'London Daily Post',
+    text: '"A doctor whose brand and treatment style revolutionizes the healthcare industry and helps thousands of patients reclaim their lives and embrace radical health."',
   },
   {
-    name: 'Emily Johnson',
-    role: 'Marketing Manager, Company C',
-    image: billgates,
-    text: 'I am thoroughly impressed with the level of service and the results. Five stars!',
+    name: 'Jennifer Ross',
+    role: 'The American Reporter',
+    text: '"The zest and tenacity that Dr. Hutcheson possesses for his work have helped him join a global platform and movement within the healthcare industry, making him a massive hit across all health circles."',
   },
 ];
 
@@ -62,56 +57,53 @@ const Testimonials = () => {
 
   return (
     <div className="bg-gray-100 py-40 fadeIn">
-      <div className="container px-[18rem] py-[3rem] border border-[#9992FF]">
-        <h2 className="text-3xl font-bold text-center mb-8 text-black">
-          Testimonials
+      <div className="container mx-auto flex flex-col lg:flex-row items-start lg:items-center">
+        <h2 className="text-5xl font-bold mb-8 lg:mb-0 lg:mr-12 text-[#363838] text-left lg:text-left">
+          <p>“</p> Kind words from our client
         </h2>
-        <div className="flex justify-center mb-8">
-          <button
-            onClick={handlePrevious}
-            className="bg-blue-500 text-white px-4 py-2 rounded-lg mr-4">
-            Previous
-          </button>
-          <button
-            onClick={handleNext}
-            className="bg-blue-500 text-white px-4 py-2 rounded-lg">
-            Next
-          </button>
-        </div>
-        <div
-          className={`flex justify-center ${
-            fade ? styles['fade-exit-active'] : styles['fade-enter-active']
-          }`}>
-          <div className="bg-white px-[10rem] py-[2rem] rounded-lg shadow-md max-w-xl">
-            <div className="flex items-center mb-4">
-              <Image
-                src={testimonials[currentIndex].image}
-                alt={`${testimonials[currentIndex].name}'s profile`}
-                className="w-16 h-16 rounded-full mr-4"
-                width={64}
-                height={64}
-              />
-              <div>
-                <h3 className="text-xl font-semibold">
-                  {testimonials[currentIndex].name}
-                </h3>
-                <p className="text-gray-600">
-                  {testimonials[currentIndex].role}
-                </p>
-              </div>
-            </div>
-            <p className="text-gray-700">{testimonials[currentIndex].text}</p>
+        <div className="px-4 py-6 lg:py-3 border border-[#eae8ffe7] shadow-md rounded-xl w-full lg:w-2/3">
+          <div className="flex justify-center mb-8">
+            <button
+              onClick={handlePrevious}
+              className="bg-gray-500 text-white px-4 py-2 rounded-lg mr-4">
+              Previous
+            </button>
+            <button
+              onClick={handleNext}
+              className="bg-gray-500 text-white px-4 py-2 rounded-lg">
+              Next
+            </button>
           </div>
-        </div>
-        <div className="flex justify-center mt-4">
-          {testimonials.map((_, index) => (
-            <span
-              key={index}
-              onClick={() => handleDotClick(index)}
-              className={`h-2 w-2 mx-2 cursor-pointer rounded-full ${
-                index === currentIndex ? 'bg-black' : 'bg-gray-300'
-              }`}></span>
-          ))}
+          <div
+            className={`flex justify-center ${
+              fade ? styles['fade-exit-active'] : styles['fade-enter-active']
+            }`}>
+            <div className="rounded-lg max-w-xl">
+              <div className="flex items-center mb-4">
+                <div>
+                  <h3 className="text-3xl font-semibold text-black">
+                    {testimonials[currentIndex].name}
+                  </h3>
+                  <p className="text-gray-600">
+                    {testimonials[currentIndex].role}
+                  </p>
+                </div>
+              </div>
+              <p className="text-gray-700 text-xl">
+                {testimonials[currentIndex].text}
+              </p>
+            </div>
+          </div>
+          <div className="flex justify-center mt-4">
+            {testimonials.map((_, index) => (
+              <span
+                key={index}
+                onClick={() => handleDotClick(index)}
+                className={`h-2 w-2 mx-2 cursor-pointer rounded-full ${
+                  index === currentIndex ? 'bg-black' : 'bg-gray-300'
+                }`}></span>
+            ))}
+          </div>
         </div>
       </div>
     </div>
