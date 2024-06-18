@@ -4,7 +4,7 @@ import BackgroundImage from '../../assets/light-brown.jpg';
 import styles from '../../styles/VideoBackground.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
-import DoctorImage from '../../assets/dr_hutcheson.jpg';
+import DoctorImage from '../../assets/dr_hutcheson.JPG';
 
 export default function Services() {
   return (
