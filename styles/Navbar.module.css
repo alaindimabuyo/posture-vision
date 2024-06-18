@@ -8,9 +8,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem 5rem;
+  padding: 2rem 2rem; /* Adjust padding for smaller screens */
   background-color: white;
-  color: white;
+  color: black; /* Change text color */
   z-index: 1000; /* Ensure it stays above other content */
 }
 
@@ -24,7 +24,9 @@
 .navLinks {
   list-style: none;
   display: flex;
-  gap: 1rem;
+  flex-direction: column; /* Change to column layout for smaller screens */
+  gap: 1rem; /* Adjust gap between links */
+  margin-left: 0; /* Remove margin for smaller screens */
 }
 
 .navLinks a {
@@ -34,4 +36,12 @@
 
 .navLinks a:hover {
   text-decoration: underline;
+}
+
+@media screen and (min-width: 768px) {
+  .navLinks {
+    flex-direction: row; /* Revert to row layout for larger screens */
+    gap: 5rem;
+    margin-left: 5rem; /* Adjust margin for larger screens */
+  }
 }

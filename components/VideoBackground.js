@@ -4,7 +4,7 @@ import VideoBackgroundMp4 from '../assets/videobackground1.mp4';
 
 const VideoBackground = () => {
   return (
-    <div className={styles.videoBackground}>
+    <div className={`${styles.videoBackground} fadeIn`}>
       <video
         autoPlay
         loop
@@ -19,12 +19,13 @@ const VideoBackground = () => {
         <h2 className="text-[2rem] font-bold mb-1">
           TRUSTED DENVER TECH CENTER DENTISTS
         </h2>
-        <h1 className="text-[3rem] font-bold mb-8">
+        <h1 className="text-[4rem] font-bold mb-8">
           Exceptional care for all ages
         </h1>
-        <button className="bg-white text-black px-4 py-2 rounded-lg">
+        <button className="bg-[#FFCE66] text-black px-10 py-4 text-xl">
           Book Now
         </button>
+        <h1 className="text-xl font-bold mt-8">OR CALL 844-369-7297</h1>
       </div>
     </div>
   );
