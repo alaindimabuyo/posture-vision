@@ -62,18 +62,6 @@ const Testimonials = () => {
           <p>“</p> Kind words from our client
         </h2>
         <div className="px-4 py-6 lg:py-3 border border-[#eae8ffe7] shadow-md rounded-xl w-full lg:w-2/3">
-          <div className="flex justify-center mb-8">
-            <button
-              onClick={handlePrevious}
-              className="bg-gray-500 text-white px-4 py-2 rounded-lg mr-4">
-              Previous
-            </button>
-            <button
-              onClick={handleNext}
-              className="bg-gray-500 text-white px-4 py-2 rounded-lg">
-              Next
-            </button>
-          </div>
           <div
             className={`flex justify-center ${
               fade ? styles['fade-exit-active'] : styles['fade-enter-active']
@@ -89,7 +77,7 @@ const Testimonials = () => {
                   </p>
                 </div>
               </div>
-              <p className="text-gray-700 text-xl">
+              <p className="text-gray-700 text-xl h-[8rem]">
                 {testimonials[currentIndex].text}
               </p>
             </div>
