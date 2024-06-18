@@ -77,7 +77,7 @@ const Testimonials = () => {
                   </p>
                 </div>
               </div>
-              <p className="text-gray-700 text-xl h-[8rem]">
+              <p className="text-gray-700 text-xl">
                 {testimonials[currentIndex].text}
               </p>
             </div>
