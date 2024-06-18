@@ -9,7 +9,7 @@ import DoctorImage from '../../assets/dr_hutcheson.JPG';
 export default function Services() {
   return (
     <div className={`${styles.containerServices} fadeIn`}>
-      <div className="container mx-auto border border-white p-[9rem] rounded-br-[100px] rounded-tl-[100px] flex">
+      <div className="container mx-auto p-[9rem] rounded-br-[100px] rounded-tl-[100px] flex">
         <div className="w-1/2">
           <div className={styles.textServices}>
             <h2 className="text-4xl font-bold mb-1 text-black">
