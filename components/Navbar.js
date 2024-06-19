@@ -1,14 +1,28 @@
 // components/Navbar/Navbar.js
+'use client';
+import { useState } from 'react';
 import Link from 'next/link';
 import styles from '../styles/Navbar.module.css';
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
   return (
     <nav className={`${styles.navbar} fadeIn`}>
       <div className={styles.logo}>
         <Link href="/">Posture Vision</Link>
       </div>
-      <ul className={styles.navLinks}>
+      <div
+        className={styles.burger}
+        onClick={toggleMenu}>
+        <div className={`${styles.line} ${isOpen ? styles.line1 : ''}`}></div>
+        <div className={`${styles.line} ${isOpen ? styles.line2 : ''}`}></div>
+        <div className={`${styles.line} ${isOpen ? styles.line3 : ''}`}></div>
+      </div>
+      <ul className={`${styles.navLinks} ${isOpen ? styles.showMenu : ''}`}>
         <li>
           <Link href="/">Home</Link>
         </li>
