@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 import styles from '../../styles/VideoBackground.module.css';
 
 const testimonials = [
@@ -23,30 +25,17 @@ const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [fade, setFade] = useState(false);
 
+  const { ref, inView } = useInView({
+    triggerOnce: true, // Only trigger once
+    threshold: 0.5, // Trigger when 50% of component is in view
+  });
+
   useEffect(() => {
-    if (fade) {
-      const timer = setTimeout(() => setFade(false), 500); // Duration of fade-out
-      return () => clearTimeout(timer);
+    if (inView) {
+      // Component is in view, trigger animations
+      console.log('About section is in view!');
     }
-  }, [fade]);
-
-  const handlePrevious = () => {
-    setFade(true);
-    setTimeout(() => {
-      setCurrentIndex((prevIndex) =>
-        prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
-      );
-    }, 500); // Duration of fade-out
-  };
-
-  const handleNext = () => {
-    setFade(true);
-    setTimeout(() => {
-      setCurrentIndex((prevIndex) =>
-        prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
-      );
-    }, 500); // Duration of fade-out
-  };
+  }, [inView]);
 
   const handleDotClick = (index) => {
     setFade(true);
@@ -56,31 +45,38 @@ const Testimonials = () => {
   };
 
   return (
-    <div className="bg-gray-100 py-40 fadeIn">
-      <div className="container mx-auto flex flex-col lg:flex-row items-start lg:items-center">
-        <h2 className="text-5xl font-bold mb-8 lg:mb-0 lg:mr-12 text-[#363838] text-left lg:text-left">
-          <p>“</p> Kind words from our client
-        </h2>
-        <div className="px-4 py-6 lg:py-3 border border-[#eae8ffe7] shadow-md rounded-xl w-full lg:w-2/3">
-          <div
-            className={`flex justify-center ${
-              fade ? styles['fade-exit-active'] : styles['fade-enter-active']
-            }`}>
-            <div className="rounded-lg max-w-xl">
-              <div className="flex items-center mb-4">
-                <div>
-                  <h3 className="text-3xl font-semibold text-black">
-                    {testimonials[currentIndex].name}
-                  </h3>
-                  <p className="text-gray-600">
-                    {testimonials[currentIndex].role}
-                  </p>
-                </div>
+    <div className="bg-gray-100 py-20 lg:py-40">
+      <div className="container mx-auto flex flex-col lg:flex-row items-start lg:items-center px-4 lg:px-0">
+        <motion.h2
+          className="text-3xl lg:text-5xl font-bold mb-8 lg:mb-0 lg:mr-12 text-[#363838] text-left"
+          initial={{ opacity: 0, x: -50 }}
+          animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }} // Animation when component enters
+          transition={{ duration: 0.5, delay: 0.2 }}>
+          <p className="hidden lg:block">“</p>
+          Kind words from our clients
+        </motion.h2>
+        <motion.div
+          className={`px-4 py-6 lg:py-3 border border-[#eae8ffe7] shadow-md rounded-xl w-full lg:w-2/3 ${
+            fade ? styles['fade-enter-active'] : ''
+          }`}
+          ref={ref}
+          initial={{ opacity: 0, x: 50 }}
+          animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }} // Animation when component enters
+          transition={{ duration: 0.5, delay: 0.4 }}>
+          <div className="rounded-lg max-w-xl mx-auto">
+            <div className="flex items-center mb-4">
+              <div>
+                <h3 className="text-xl lg:text-3xl font-semibold text-black">
+                  {testimonials[currentIndex].name}
+                </h3>
+                <p className="text-gray-600">
+                  {testimonials[currentIndex].role}
+                </p>
               </div>
-              <p className="text-gray-700 text-xl">
-                {testimonials[currentIndex].text}
-              </p>
             </div>
+            <p className="text-gray-700 text-lg lg:text-xl">
+              {testimonials[currentIndex].text}
+            </p>
           </div>
           <div className="flex justify-center mt-4">
             {testimonials.map((_, index) => (
@@ -92,7 +88,7 @@ const Testimonials = () => {
                 }`}></span>
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
