@@ -17,7 +17,7 @@ const VideoBackground = () => {
       </video>
       <div className={styles.textOverlay}>
         <h2 className="text-[2rem] font-bold mb-1">
-          TRUSTED DENVER TECH CENTER DENTISTS
+          TRUSTED FLORIDA TECH CENTER FOR STRUCTURAL HEALTH
         </h2>
         <h1 className="text-[3rem] font-bold mb-8">
           Exceptional care for all ages

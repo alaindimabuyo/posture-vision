@@ -9,7 +9,7 @@ export default function Services() {
       <div className="container mx-auto border-4 border-white p-[20rem] rounded-br-[100px] rounded-tl-[100px]">
         <div className={styles.textOverlay}>
           <h2 className="text-[2rem] font-bold mb-1">
-            TRUSTED DENVER TECH CENTER DENTISTS
+            TRUSTED FLORIDA TECH CENTER FOR STRUCTURAL HEALTH
           </h2>
           <h1 className="text-[3rem] font-bold mb-8">
             Exceptional care for all ages
