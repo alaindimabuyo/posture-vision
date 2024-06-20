@@ -20,12 +20,13 @@ export default function Home() {
         <div id="services">
           <Services />
         </div>
-        <div id="testimonials">
-          <Testimonials />
-        </div>
         <div id="contact">
           <FormComponent />
         </div>
+        <div id="testimonials">
+          <Testimonials />
+        </div>
+       
       </div>
 
       <Footer />

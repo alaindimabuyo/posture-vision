@@ -1,7 +1,7 @@
 // components/VideoBackground.js
 'use client';
 import styles from '../styles/VideoBackground.module.css';
-import VideoBackgroundMp4 from '../assets/videoBackground4.mp4';
+import VideoBackgroundMp4 from '../assets/posture_vision_detect.mp4';
 import { Link as ScrollLink } from 'react-scroll';
 const VideoBackground = () => {
   return (
@@ -17,23 +17,23 @@ const VideoBackground = () => {
         Your browser does not support the video tag.
       </video>
       <div className={styles.textOverlay}>
-        <h2 className="text-[2rem] font-bold mb-1">
-          HEALTH IS THE KEY TO STAYING CLOSE TO YOU LOVED ONES
+        <h2 className="text-[1rem] font-bold mb-1">
+          MAINTAINING GOOD POSTURE IS KEY TO YOUR WELL-BEING
         </h2>
         <h1 className="text-[4rem] font-bold mb-8">
-          Exceptional care for all ages
+          Advanced Posture Detection for a Healthier Life
         </h1>
         <ScrollLink
-          to="contact"
+          to="features"
           smooth={true}
           duration={500}>
           <div>
             <button className="bg-[#FFCE66] text-black px-10 py-4 text-xl">
-              Book Now
+              Learn More
             </button>
           </div>
         </ScrollLink>
-        <h1 className="text-xl font-bold mt-8">OR CALL 844-369-7297</h1>
+
       </div>
     </div>
   );
