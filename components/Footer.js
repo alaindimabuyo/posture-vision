@@ -8,6 +8,7 @@ import {
   faGoogle,
   faYoutube,
 } from '@fortawesome/free-brands-svg-icons';
+import { Link as ScrollLink } from 'react-scroll';
 
 const Footer = () => {
   return (
@@ -67,32 +68,40 @@ const Footer = () => {
           <h3 className="text-lg font-semibold">Quick Links</h3>
           <ul className="mt-2 space-y-2">
             <li>
-              <a
-                href="#"
-                className="hover:underline">
+              <ScrollLink
+                to="home"
+                smooth={true}
+                duration={500}
+                className="cursor-pointer">
                 Home
-              </a>
+              </ScrollLink>
             </li>
             <li>
-              <a
-                href="#"
-                className="hover:underline">
+              <ScrollLink
+                to="services"
+                smooth={true}
+                duration={500}
+                className="cursor-pointer">
                 Services
-              </a>
+              </ScrollLink>
             </li>
             <li>
-              <a
-                href="#"
-                className="hover:underline">
-                About Us
-              </a>
+              <ScrollLink
+                to="testimonials"
+                smooth={true}
+                duration={500}
+                className="cursor-pointer">
+                Testimonials
+              </ScrollLink>
             </li>
             <li>
-              <a
-                href="#"
-                className="hover:underline">
+              <ScrollLink
+                to="contact"
+                smooth={true}
+                duration={500}
+                className="cursor-pointer">
                 Contact
-              </a>
+              </ScrollLink>
             </li>
           </ul>
         </div>

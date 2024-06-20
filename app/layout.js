@@ -3,6 +3,7 @@ import './globals.css';
 import Navbar from '../components/Navbar';
 import VideoBackground from '../components/VideoBackground';
 import '../styles/globals.css';
+import ChatWidget from '@/components/ChatWidget';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
@@ -16,6 +17,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <Navbar />
         {children}
+        <ChatWidget />
       </body>
     </html>
   );

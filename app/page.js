@@ -11,22 +11,21 @@ import { motion, AnimatePresence } from 'framer-motion';
 export default function Home() {
   return (
     <div>
-      <div className="relative min-h-screen">
+      <div
+        className="relative min-h-screen"
+        id="home">
         <VideoBackground />
       </div>
       <div className="min-h-screen bg-white">
-        <Services />
-        <Testimonials />
-        <AnimatePresence initial={false}>
-          <motion.div
-            key="form"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -50 }}
-            transition={{ duration: 0.5 }}>
-            <FormComponent />
-          </motion.div>
-        </AnimatePresence>
+        <div id="services">
+          <Services />
+        </div>
+        <div id="testimonials">
+          <Testimonials />
+        </div>
+        <div id="contact">
+          <FormComponent />
+        </div>
       </div>
 
       <Footer />

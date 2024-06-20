@@ -1,7 +1,8 @@
 // components/VideoBackground.js
+'use client';
 import styles from '../styles/VideoBackground.module.css';
-import VideoBackgroundMp4 from '../assets/videobackground1.mp4';
-
+import VideoBackgroundMp4 from '../assets/videoBackground4.mp4';
+import { Link as ScrollLink } from 'react-scroll';
 const VideoBackground = () => {
   return (
     <div className={`${styles.videoBackground} fadeIn`}>
@@ -22,9 +23,16 @@ const VideoBackground = () => {
         <h1 className="text-[4rem] font-bold mb-8">
           Exceptional care for all ages
         </h1>
-        <button className="bg-[#FFCE66] text-black px-10 py-4 text-xl">
-          Book Now
-        </button>
+        <ScrollLink
+          to="contact"
+          smooth={true}
+          duration={500}>
+          <div>
+            <button className="bg-[#FFCE66] text-black px-10 py-4 text-xl">
+              Book Now
+            </button>
+          </div>
+        </ScrollLink>
         <h1 className="text-xl font-bold mt-8">OR CALL 844-369-7297</h1>
       </div>
     </div>
