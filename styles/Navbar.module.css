@@ -1,17 +1,17 @@
 /* components/Navbar/Navbar.module.css */
 
 .navbar {
-  position: fixed; /* Make the navbar fixed */
-  top: 0; /* Stick it to the top */
+  position: fixed;
+  top: 0;
   left: 0;
-  width: 100%; /* Take the full width of the viewport */
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem 5rem;
+  padding: 1.5rem;
   background-color: white;
-  color: white;
-  z-index: 1000; /* Ensure it stays above other content */
+  color: black;
+  z-index: 1000;
 }
 
 .logo a {
@@ -24,7 +24,12 @@
 .navLinks {
   list-style: none;
   display: flex;
+  flex-direction: column;
   gap: 1rem;
+  margin-left: 0;
+  transition: max-height 0.3s ease-in-out;
+  max-height: 0;
+  overflow: hidden;
 }
 
 .navLinks a {
@@ -34,4 +39,48 @@
 
 .navLinks a:hover {
   text-decoration: underline;
+}
+
+.showMenu {
+  max-height: 300px; /* Adjust based on the number of links */
+}
+
+.burger {
+  display: block;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.line {
+  width: 25px;
+  height: 3px;
+  background-color: black;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+.line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.line2 {
+  opacity: 0;
+}
+
+.line3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+@media screen and (min-width: 768px) {
+  .navLinks {
+    flex-direction: row;
+    gap: 5rem;
+    margin-left: 5rem;
+    max-height: none;
+    overflow: visible;
+  }
+
+  .burger {
+    display: none;
+  }
 }
