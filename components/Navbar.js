@@ -44,7 +44,7 @@ const Navbar = () => {
             smooth={true}
             duration={500}
             className="cursor-pointer">
-            Services
+            About
           </ScrollLink>
         </li>
         <li>
