@@ -70,11 +70,11 @@ const FormComponent = () => {
           <div className="flex items-center mb-4">
             <FontAwesomeIcon
               icon={faMapMarkerAlt}
-              className="text-gray-500 mr-11 text-4xl"
+              className="text-gray-500 mr-11 text-3xl"
             />
             <div className="text-black">
-              <h3 className="text-4xl font-semibold">Address</h3>
-              <p className="text-3xl">
+              <h3 className="text-2xl font-semibold">Address</h3>
+              <p className="text-xl">
                 15050 Elderberry Ln Suite 4-7 Fort Myers, FL 33907
               </p>
             </div>
@@ -82,11 +82,11 @@ const FormComponent = () => {
           <div className="flex items-center mb-4">
             <FontAwesomeIcon
               icon={faClock}
-              className="text-gray-500 mr-11 text-4xl"
+              className="text-gray-500 mr-11 text-3xl"
             />
             <div className="text-black">
-              <h3 className="text-4xl font-semibold">Opening Hours</h3>
-              <div className="text-3xl">
+              <h3 className="text-2xl font-semibold">Opening Hours</h3>
+              <div className="text-xl">
                 <p>Monday- Friday 8am to 6pm</p>
                 <p>Saturday-Sunday Open by Appointment</p>
               </div>
@@ -95,11 +95,11 @@ const FormComponent = () => {
           <div className="flex items-center">
             <FontAwesomeIcon
               icon={faPhone}
-              className="text-gray-500 mr-11 text-4xl"
+              className="text-gray-500 mr-11 text-3xl"
             />
             <div className="text-black">
-              <h3 className="text-4xl font-semibold">Contact</h3>
-              <p className="text-3xl">844-369-7297</p>
+              <h3 className="text-2xl font-semibold">Contact</h3>
+              <p className="text-xl">844-369-7297</p>
             </div>
           </div>
         </motion.div>
