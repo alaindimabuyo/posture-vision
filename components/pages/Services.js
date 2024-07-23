@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Image from 'next/image';
 import styles from '../../styles/VideoBackground.module.css';
-import CompanyImage from '../../assets/posture_vision.gif'; // Replace with your company image
+import CompanyImage from '../../assets/posture_vision.gif'; 
 
 const About = () => {
   const { ref, inView } = useInView({
