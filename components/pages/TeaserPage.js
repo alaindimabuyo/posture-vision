@@ -1,8 +1,9 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 import PhoneImage from '../../assets/phone-mock.webp'; 
 import InnerImage from '../../assets/posture-correct.png'; 
-import PostureVisionLogo from '../../assets/posture-vision-logo.png'
+import PostureVisionLogo from '../../assets/posture-vision-logo.png';
 
 const containerVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -25,8 +26,38 @@ const itemVariants = {
 };
 
 export default function Home() {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://link.msgsndr.com/js/form_embed.js';
+    script.async = true;
+    document.body.appendChild(script);
+    
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+  const [display, setDisplay] = useState('none')
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-[#150734] via-[#321b63] to-[#4a2c8c] px-4 overflow-hidden">
+            <iframe
+              src="https://api.leadconnectorhq.com/widget/form/zg8TArfujrfEzpmKyICA"
+              style={{ display: `${display}`, width: '100%', height: '425px'}}
+              id="popup-zg8TArfujrfEzpmKyICA" 
+              data-layout="{'id':'POPUP'}"
+              data-trigger-type="alwaysShow"
+              data-trigger-value=""
+              data-activation-type="alwaysActivated"
+              data-activation-value=""
+              data-deactivation-type="leadCollected"
+              data-deactivation-value=""
+              data-form-name="Posture Vision Teaser Form"
+              data-height="425"
+              data-layout-iframe-id="popup-zg8TArfujrfEzpmKyICA"
+              data-form-id="zg8TArfujrfEzpmKyICA"
+              title="Posture Vision Teaser Form"
+                  >
+            </iframe>
+
       <div className="w-full max-h-screen flex flex-col md:flex-row items-center justify-around">
         <motion.div
           initial="hidden"
@@ -54,18 +85,14 @@ export default function Home() {
             variants={itemVariants}
             className="flex flex-col sm:flex-col items-center w-full"
           >
-            <input
-              type="email"
-              placeholder="Your Email"
-              className="w-full px-4 py-2 mb-4 rounded-md text-gray-700 focus:outline-none"
-            />
-            <button
+          <button
               type="submit"
               className="w-full px-4 py-2 bg-black text-white rounded-md hover:bg-gray-800 transition duration-300"
+              onClick={() => setDisplay("block")}
             >
               Get notified
             </button>
-          </motion.form>
+            </motion.form>
           <motion.p
             variants={itemVariants}
             className="text-gray-400 mt-4"
